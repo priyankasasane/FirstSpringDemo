@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="std1" class="com.prowings.beans.Student">
+		<property name="rollNo" value="101"></property>
+		<property name="name" value="Priti"></property>
+
+		<property name="adr">
+			<ref bean="add" />
+		</property>
+
+		<property name="sub">
+			<list>
+				<value>Java</value>
+				<value>C+</value>
+				<value>Cloud</value>
+			</list>
+		</property>
+
+		<property name="mobNo">
+			<set>
+				<value>8854672190</value>
+				<value>9876543445</value>
+				<value>7234508132</value>
+			</set>
+		</property>
+
+		<property name="subWiseMarks">
+			<map>
+				<entry key="Java" value="98"></entry>
+				<entry key="C+" value="96"></entry>
+				<entry key="Cloud" value="78"></entry>
+				<entry key="Maths" value="97"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean name="add" class="com.prowings.beans.Address">
+		<property name="city" value="Pune"></property>
+		<property name="state" value="MH"></property>
+		<property name="PIN" value="6536"></property>
+	</bean>
+</beans>

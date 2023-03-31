@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean name="Emp" class="com.prowings.beans.Employee" scope="singleton">
+		<constructor-arg value="101" />
+		<constructor-arg value="Priya" />
+		<constructor-arg value="IT" />
+		<constructor-arg ref="adr1" />
+	</bean> -->
+
+	<bean name="Emp1" class="com.prowings.beans.Employee"
+		autowire="byName" scope="prototype"> <!-- when we use autowiring (byName, byType, constructor ) no need for ref adr -->
+		<property name="id" value="123" />
+		<property name="name" value="Tina"></property>
+		<property name="dept" value="EE"></property>
+	</bean>
+
+	<bean name="adr" class="com.prowings.beans.Address" scope="singleton">
+		<property name="city" value="Pune"></property>
+		<property name="state" value="MH"></property>
+		<property name="PIN" value="6536"></property>
+	</bean>
+
+	<bean name="adr1" class="com.prowings.beans.Address" scope="singleton">
+		<property name="city" value="Thane"></property>
+		<property name="state" value="goa"></property>
+		<property name="PIN" value="998"></property>
+	</bean>
+
+</beans>
